@@ -23,5 +23,16 @@ class SegundaActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val bundle = intent.extras
+        if (bundle != null) {
+            val edad = bundle.getInt("EDAD")
+            val esEstudiante = bundle.getBoolean("ES_ESTUDIANTE")
+            binding.tvwEdad.text = "Edad: $edad años"
+            binding.tvwEstudiante.text = "¿Es estudiante?: $esEstudiante"
+        }
+
+        binding.tvwname.text =bundle?.getString("USER_NAME")// intent.getStringExtra(" USER_NAME")
+
     }
 }
